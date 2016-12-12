@@ -41,7 +41,7 @@ Below is how modules should be structured.
 ```
 `module_root`: This must be the name of the module.  Please limit names to alphanumerics and underscores.
 	| `views<required>`: jade templates go here.
-    | `root.jade<required>`: The main page for the module... Called by homeation by default.
+         - `root.jade<required>`: The main page for the module... Called by homeation by default.
 	| `module_config.json<optional>`: config for providing settings for the module.
 	| `package.json<required>`
 	| `<module_name>.js<required>`: This is the file homeation calls.  Glue all components of the module together here.
