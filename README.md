@@ -1,6 +1,8 @@
 # homeation
 WIP: A DIY home automation framework.
 
+Created by SKEPT1K (REFLEK7 is my other account).
+
 ## Description
 The goal of homeation is to provide a modular and light-weight do-it-yourself home automation framework.
 
@@ -53,9 +55,6 @@ exports.renderInfo = function(callback){
   callback(err, render);
 }
 ```
-`<string>err`: Provide an insightful error message for homeation to relay.
-`<json>body`: Allows the module to send data to a predefined template.
-  * `body.data`: Attach values from sensors.
 
 ##### render
 As creating a one size fits all UI can be tough, homeation requires modules provide their own UI.
