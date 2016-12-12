@@ -31,7 +31,7 @@ homeation was designed to seamlessly integrate 3rd party modules.  Simply drag a
 
 ## Creating Modules
 ### Module Description
-The goal of homeation was to provide a framework in which developers can create modules to interface with their favorite hardware.  Modules should contain a singular model for interacting with a specific piece of hardware, a properlly formated `package.json` and optionally, custom views.  See the section below for a full list.
+The goal of homeation was to provide a framework in which developers can create modules to interface with their favorite hardware.  Modules should contain a singular model for interacting with a specific piece of hardware, a properly formated `package.json` and custom views.
 
 ### Components of a Module
 Below is how modules should be structured.
