@@ -4,7 +4,7 @@ module.exports = function(app) {
   var hModule = require(app.modulePath + '/' + app.activeModule + '.js');
 
   app.get('/' + app.activeModule, function(req, res){
-    hModule.renderInfo(function(err, render){
+    hModule.renderPage('root', function(err, render){
       if(err){
         res.render(err);
       } else {

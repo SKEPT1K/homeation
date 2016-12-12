@@ -40,7 +40,8 @@ Below is how modules should be structured.
 
 ```
 `module_root`: This must be the name of the module.  Please limit names to alphanumerics and underscores.
-	| `views<required>`: HTML (or jade) templates go here.
+	| `views<required>`: jade templates go here.
+    | `root.jade<required>`: The main page for the module... Called by homeation by default.
 	| `module_config.json<optional>`: config for providing settings for the module.
 	| `package.json<required>`
 	| `<module_name>.js<required>`: This is the file homeation calls.  Glue all components of the module together here.
@@ -49,9 +50,9 @@ Below is how modules should be structured.
 ### Module Functions
 homeation provides numerous functions to make modules focused and easy to implement.
 
-#### renderInfo
+#### renderPage
 ```
-exports.renderInfo = function(callback){
+exports.renderInfo = function(page, callback){
   callback(err, render);
 }
 ```
@@ -61,7 +62,7 @@ As creating a one size fits all UI can be tough, homeation requires modules prov
 
 ```
 var render = {};
-render.view = 'template' // The name of the template to render.
+render.view = page // The name of the template to render.  Default sent by homeation is 'root'.
 render.params = {'temperature': temperature} // Object of data sent to the page.
 ```
 

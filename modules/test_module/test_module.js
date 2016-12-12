@@ -1,6 +1,6 @@
-exports.renderInfo = function(callback){
+exports.renderPage = function(page, callback){
   var render = {}
-  render.view = 'render.jade';
+  render.view = 'page';
   render.params = {};
   callback(null, render);
 }
