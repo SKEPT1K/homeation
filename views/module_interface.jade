@@ -1,0 +1,29 @@
+doctype
+html
+  head
+    link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css")
+    link(rel='stylesheet', href="/css/interface.css")
+    script(src="https://code.jquery.com/jquery-2.1.1.min.js")
+    script(src="/js/interface.js")
+  body
+    .container
+      if #{body}
+      .row.voffset
+        .col-md-4
+          div#data_from_hardware "#{body.data.sensor}"
+
+script.
+  $(document).ready(function() {
+
+    refreshSensors();
+    setInterval(refreshSensors, 5000);
+
+  });
+
+
+  function refreshSensors() {
+
+    $.get('/temperature-dht/get', function(json_data) {
+      $("#temperature").text('Current temperature: ' + json_data.temperature + ' C');
+    });
+  }

@@ -1,0 +1,36 @@
+doctype
+html
+  head
+    title Activate Module
+    script(src="./jquery-2.0.3.min.js")
+  body
+    .container
+      h1 Activate a Module
+      .row.voffset
+        .col-md-4
+          div#temperature Installed Modules:
+          "#{installed_modules}"
+      .row.voffset
+        .col-md-3
+          div Which module should be activated?
+        .col-md-3
+          input#module_to_activate(type='text')
+        .col-md-3
+          button.btn.btn-block.btn-lg.btn-primary#activate_button Activate
+
+script.
+  $(document).ready(function() {
+    $('#activate_button').click(function() {
+      $.ajax({
+        type: "POST",
+        url: "/homeation/module/activate/" + encodeURIComponent($('#module_to_activate').val()),
+        success: function(data){
+          if(data.error){
+            alert(data.error);
+          } else {
+            alert("Module Activated!  Please restart the server for the changes to take effect.");
+          }
+        }
+      });
+    });
+  });

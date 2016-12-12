@@ -1,0 +1,8 @@
+{
+  "name": "homeation",
+  "description": "",
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest"
+  }
+}

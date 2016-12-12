@@ -1,0 +1,6 @@
+{
+  "homeation": {
+	"listen_port": 3000,
+  "active_module": "none"
+	}
+}
